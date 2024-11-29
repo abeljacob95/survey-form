@@ -11,7 +11,7 @@ function App() {
   return (
     <div>
       <header>
-        <img src="your-logo.png" alt="Abron Technologies Logo" className="logo" />
+        <img src="logo192.png" alt="Abron Technologies Logo" className="logo" />
         <h1>Abron Technologies Survey</h1>
       </header>
 
