@@ -8,6 +8,46 @@ function App() {
     setDesignation(e.target.value);
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    const form = e.target;
+    const formData = new FormData(form);
+    
+    const formObject = {};
+    formData.forEach((value, key) => {
+      if (formObject[key]) {
+        if (!Array.isArray(formObject[key])) {
+          formObject[key] = [formObject[key]];
+        }
+        formObject[key].push(value);
+      } else {
+        formObject[key] = value;
+      }
+    });
+
+    try {
+      const response = await fetch('http://localhost:5000/api/submit-survey', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formObject)
+      });
+      
+      if (response.ok) {
+        alert('Survey submitted successfully!');
+        form.reset();
+        setDesignation('');
+      } else {
+        alert('Error submitting survey');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Error submitting survey');
+    }
+  };
+
   return (
     <div>
       <header>
@@ -19,7 +59,7 @@ function App() {
         Gather strategic insights into product utility, organizational fit, and high-level feature preferences.
       </div>
 
-      <form id="surveyForm">
+      <form id="surveyForm" onSubmit={handleSubmit}>
         <div className="progress-bar">
           <div className="progress" id="formProgress"></div>
         </div>
