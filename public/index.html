@@ -3,103 +3,41 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="theme-color" content="#2563eb" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Abron Technologies Survey Form - Gather strategic insights into product utility and organizational fit"
+      content="Web site created using create-react-app"
     />
-    <meta name="author" content="Abron Technologies" />
-    <meta property="og:title" content="Abron Technologies Survey" />
-    <meta property="og:description" content="Participate in our survey to help us improve our services" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="your-website-url" />
-    <meta property="og:image" content="%PUBLIC_URL%/og-image.jpg" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Abron Survey">
-    <meta name="msapplication-TileColor" content="#2563eb">
-    <meta name="msapplication-TileImage" content="%PUBLIC_URL%/ms-icon-144x144.png">
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
 
-    <title>Abron Technologies Survey</title>
-
-    <style>
-      @supports (-webkit-touch-callout: none) {
-        input,
-        select,
-        textarea {
-          font-size: 16px !important;
-        }
-      }
-
-      .initial-loading {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        width: 100vw;
-        background-color: #f8fafc;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 9999;
-      }
-
-      .loading-spinner {
-        width: 50px;
-        height: 50px;
-        border: 5px solid #f3f3f3;
-        border-top: 5px solid #2563eb;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-      }
-
-      @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
-
-      body {
-        margin: 0;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-      }
-
-      body.loaded {
-        opacity: 1;
-      }
-    </style>
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Survey - Abron Technologies</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this application.</noscript>
-    
-    <div class="initial-loading" id="initialLoading">
-      <div class="loading-spinner"></div>
-    </div>
-
+    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
 
-    <script>
-      window.addEventListener('load', function() {
-        document.body.classList.add('loaded');
-        const loadingElement = document.getElementById('initialLoading');
-        if (loadingElement) {
-          loadingElement.style.display = 'none';
-        }
-      });
-    </script>
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
 
-    <script>
-      window.addEventListener('error', function(e) {
-        console.error('Global error:', e);
-      });
-    </script>
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
   </body>
 </html>
