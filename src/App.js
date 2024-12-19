@@ -27,7 +27,7 @@ function App() {
     });
 
     try {
-      const response = await fetch('http://localhost:5000/api/submit-survey', {
+      const response = await fetch('https://surveyapi.abrontech.com/api/submit-survey', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
